@@ -18,3 +18,6 @@
 ## Realizar Deploy
 ```Na raíz do seu projeto: "firebase deploy"```<br>
 
+## Rodar o projeto localmente
+```Suba um servidor HTTP simples na porta de sua preferência. Exemplo "python -m SimpleHTTPServer 8000"```<br>
+```Acesse localhost:8000/public```<br>
