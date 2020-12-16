@@ -15,10 +15,15 @@ document.getElementById('chatInput').addEventListener('keyup', (event) => {
   }
 })
 
+//Adiciona uma mensagem à subcollection messages
+function insertMessage(message) {
+  db.collection('chats').doc(selectedChat).collection('messages').add(message);
+}
+
 if (!sessionStorage.getItem('token')) {
   window.location.replace('login/login.html');
 } else {
-  listenToUsersCollection();
+  loadAndListenToUsersCollection();
 }
 
 document.addEventListener('visibilitychange', (event) => {
@@ -30,8 +35,9 @@ document.addEventListener('visibilitychange', (event) => {
 });
 
 //Escuta todas as mudanças na coleçao 'users'
-function listenToUsersCollection() {
-  db.collection('users').where('uid', '!=', uid).onSnapshot(function(docs) {
+function loadAndListenToUsersCollection() {
+  const myUserId = uid;
+  db.collection('users').where('uid', '!=', myUserId).onSnapshot(function(docs) {
     const contacts = [];
     contactsEl.innerHTML = '';
     docs.forEach(doc => {
@@ -41,11 +47,6 @@ function listenToUsersCollection() {
       appendContactElement(contact);
     });
   });
-}
-
-//Adiciona uma mensagem à subcollection messages
-function insertMessage(message) {
-  db.collection('chats').doc(selectedChat).collection('messages').add(message);
 }
 
 //Escuta às mudanças do documento especifico passado por parametro
@@ -59,6 +60,7 @@ function listenToChat(contactId) {
   } else {
     chatId = uid + contactId;
   }
+  setContactName(contactId);
   selectedChat = chatId;
   db.collection('chats').doc(chatId).set({
     participants: [uid, contactId]
@@ -71,6 +73,11 @@ function listenToChat(contactId) {
   });
 }
 
+function setContactName(contactId) {
+  db.collection('users').doc(contactId).get().then(user => {
+    document.getElementById('contactName').innerHTML = user.data().displayName;
+  });
+}
 
 function appendContactElement(contact) {
   const el = document.createElement('li');

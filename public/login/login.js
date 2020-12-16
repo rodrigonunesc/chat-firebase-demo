@@ -15,7 +15,6 @@ function googleLogin(event) {
     });
   }).catch(function(error) {
     console.log(error.message);
-    alert('Ocorreu um erro ao logar');
   });
 }
 

@@ -1,7 +1,6 @@
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
 
 <!DOCTYPE html>
 <html>
@@ -14,7 +13,6 @@
 		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.js"></script>
 	</head>
-	<!--Coded With Love By Mutiullah Samim-->
 	<body>
 		<div class="container-fluid h-100">
 			<div class="row justify-content-center h-100">
@@ -29,6 +27,7 @@
 				<div class="col-md-8 col-xl-6 chat">
 					<div class="card">
 						<div class="card-header msg_head">
+							<p id="contactName">Selecione um usuario!!!</p>
 							<span id="action_menu_btn"><i class="fas fa-ellipsis-v"></i></span>
 							<div class="action_menu">
 								<ul>
@@ -61,16 +60,9 @@
 
 		<script>
 			// Your web app's Firebase configuration
-			var firebaseConfig = {
-					apiKey: "AIzaSyBM7NcQ43lOCsj_PcW8Zo2lkyvWgoKOrXs",
-					authDomain: "management-f4ff5.firebaseapp.com",
-					databaseURL: "https://management-f4ff5.firebaseio.com",
-					projectId: "management-f4ff5",
-					storageBucket: "management-f4ff5.appspot.com",
-					messagingSenderId: "32357231342",
-					appId: "1:32357231342:web:0f0cb177e6b153c4fd21ff",
-					measurementId: "G-41VFYZJR99"
-				};
+			const firebaseConfig = {
+				//variaveis firebase
+			};
 			// Initialize Firebase
 			firebase.initializeApp(firebaseConfig);
 		</script>
