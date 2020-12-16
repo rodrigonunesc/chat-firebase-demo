@@ -10,7 +10,7 @@
 ``` 2.1. Selecione o serviço "Firestore" e confirme```<br>
 ``` 2.2. Selecione um projeto na GCP ou crie um novo```<br>
 ``` 2.3. Algumas perguntas serão feitas logo em seguida. Confirme-as.```<br>
-```3. No código, no arquivo index.html e login.html(na variável "firebaseConfig") substitua suas credenciais do aplicativo firebase.```<br>
+```3. No código, no arquivo index.html e login.html(na variável "firebaseConfig") substitua pelas suas credenciais do aplicativo firebase.```<br>
 ``` 3.1 Para acessar suas credenciais, vá ao console do firebase, clique em "configuraçoes" no seu projeto```<br>
 ``` 3.2 Na aba "Geral" em "Seus Aplicativos", clique no aplicativo web e em CDN, você terá acesso a variavel "firebaseConfig" com suas credenciais```<br>
 ``` 3.3 Copie-a e cole nos arquivos index.html e login.html```<br>
